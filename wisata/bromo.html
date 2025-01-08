@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Raja Ampat Papua Wayag - Pianemo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="image-info">
+                <img src="../images/bromo.jpg" alt="Raja Ampat" class="main-image">
+                <h1>Menikmati Keindahan Alam di Gunung Bromo</h1>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="reviews">(872 reviews)</span>
+                </div>
+                <div class="additional-info">
+                    <div class="info-item">
+                        <i class="fas fa-undo"></i>
+                        <p>Free Cancellation: Cancel up to 24 hours in advance to receive a full refund</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <p>Health Precautions: Special health and safety measures apply. Learn more</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>Mobile Ticketing: Use your phone or print your voucher</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <p>Duration: 3.5 Hours</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-bolt"></i>
+                        <p>Instant Confirmation: Don't wait for the confirmation</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <p>Live Tour Guide: In English</p>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-form">
+                <h2>Book Now</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fromDate">From:</label>
+                        <input type="date" id="fromDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="toDate">To:</label>
+                        <input type="date" id="toDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guestCount">Guests:</label>
+                        <select id="guestCount"  required data-price="$1.00">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                        
+                    <div class="subtotal">
+                        <p>Subtotal: <span id="subtotalAmount">$0.00</span></p>
+                    </div>
+                    <button type="submit" class="confirm-booking">Confirm Booking</button>
+                </form>
+                <div class="additional-options">
+                    <button id="saveWishlist" class="option-button">
+                        <i class="far fa-heart"></i> Save To Wishlist
+                    </button>
+                    <button id="shareTrip" class="option-button">
+                        <i class="fas fa-share-alt"></i> Share This Trip
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fromDateInput = document.getElementById('fromDate');
+            const toDateInput = document.getElementById('toDate');
+            const guestCountSelect = document.getElementById('guestCount');
+            const subtotalElement = document.getElementById('subtotalAmount');
+            
+            function calculateSubtotal() {
+                const fromDate = new Date(fromDateInput.value);
+                const toDate = new Date(toDateInput.value);
+                const guestCount = parseInt(guestCountSelect.value);
+                const pricePerNightPerGuest = 50; // Sesuaikan dengan harga yang benar
+                
+                if (fromDate && toDate && !isNaN(fromDate) && !isNaN(toDate)) {
+                    const nights = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+                    const subtotal = nights * guestCount * pricePerNightPerGuest;
+                    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                } else {
+                    subtotalElement.textContent = '$0.00';
+                }
+            }
+            
+            fromDateInput.addEventListener('change', calculateSubtotal);
+            toDateInput.addEventListener('change', calculateSubtotal);
+            guestCountSelect.addEventListener('change', calculateSubtotal);
+            
+            // Set minimum date for fromDate to today
+            const today = new Date().toISOString().split('T')[0];
+            fromDateInput.min = today;
+            
+            // Update minimum date for toDate when fromDate changes
+            fromDateInput.addEventListener('change', function() {
+                toDateInput.min = fromDateInput.value;
+            });
+            
+            // Calculate subtotal on page load
+            calculateSubtotal();
+        });
+        </script>
+        
+</body>
+</html>

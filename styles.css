@@ -1,0 +1,795 @@
+/* Reset dan style dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+.home{
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px ;
+  }
+
+
+
+  .home-content {
+    text-align: left;
+    color: white;
+    z-index: 2;
+    position:relative
+  }
+  
+  .home-nav {
+    position: absolute;
+   bottom: 100px;
+   left: 0;
+   right: 0;
+    text-align:left;
+  }
+
+  .home-content {
+    z-index: 1;
+    max-width: 600px;
+}
+
+.home h1 {
+    font-size: 3rem;
+}
+
+.home p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+  
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #000000;
+  }
+  
+  .dot-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 10px;
+    display:block;
+   
+  }
+ 
+  
+
+/* Search Section */
+#search {
+    background-color: #f8f8f8;
+    padding: 2rem 5%;
+}
+
+#search form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#search input,
+#search select,
+#search button {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#search button {
+    background-color: #0066cc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search button:hover {
+    background-color: #0052a3;
+}
+
+/* Tours Section */
+#tours {
+    padding: 4rem 5%;
+}
+
+#tours h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ubah menjadi 4 kolom tetap */
+    gap: 2rem;
+}
+
+.tour-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.book-now {
+    margin-top: auto;
+}
+
+.tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tour-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.tour-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+.tour-card .price {
+    padding: 0 1rem 1rem;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.btn.book-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn.book-now:hover {
+    background-color: #0056b3;
+}
+
+.inspiration {
+margin-top: 2rem;
+}
+
+.inspiration-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1rem;
+}
+
+.inspiration-card {
+border: 1px solid #e0e0e0;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.inspiration-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.inspiration-label {
+position: absolute;
+top: 10px;
+left: 10px;
+background-color: white;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 0.8rem;
+}
+
+.inspiration-info {
+padding: 1rem;
+}
+
+.author {
+display: flex;
+align-items: center;
+margin-top: 1rem;
+}
+
+.author img {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+margin-right: 10px;
+}
+
+.read-more {
+display: inline-block;
+margin-top: 1rem;
+color: #007bff;
+text-decoration: none;
+}
+
+.inspiration {
+    margin-top: 2rem;
+    padding: 40px 0;
+}
+
+.inspiration h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.inspiration > p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.inspiration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.inspiration-card {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inspiration-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.inspiration-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inspiration-info {
+    padding: 20px;
+    background: white;
+}
+
+.inspiration-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.inspiration-info > p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author span {
+    font-size: 14px;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+}
+
+.btn-secondary:hover {
+    background-color: #e2e6ea;
+}
+.centered {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+
+.testimonials {
+    background-color: #e6f2ff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .testimonial-header {
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  .tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-header p {
+    color: #666;
+  }
+  
+  .testimonial-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 0 15px;
+    text-align: left;
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-content h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .location {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .rating {
+    color: #ffc107;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Styling umum untuk tombol navigasi */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Memastikan tombol berada di atas konten */
+    opacity: 0.7; /* Membuat tombol semi-transparan saat tidak di-hover */
+    transition: opacity 0.3s ease, background-color 0.3s ease; /* Transisi halus untuk efek hover */
+  }
+  
+  .prev-btn {
+    left: 0px;
+  }
+  
+  .next-btn {
+    right: 0px;
+  }
+  
+  .footer {
+    background-color: #fff;
+    color: #333;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-main {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px; /* Atur jarak antar kolom */
+    flex: 2;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.footer-bottom-links li {
+    margin: 0;
+}
+
+.footer-bottom-links li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+  }
+  .footer-logo-container {
+    text-align: left;
+    margin-bottom: 10px; /* Sesuaikan jarak antara logo dan teks "Raizen" */
+  }
+  
+  .footer-logo {
+    width: 60px; /* Sesuaikan ukuran logo */
+    height: 60px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover;
+    border: 2px solid #ffffff; /* Opsional: menambahkan border putih */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Opsional: menambahkan bayangan halus */
+  }
+  
+  .footer-content h3 {
+    margin-top: 0; /* Menghilangkan margin atas default dari h3 */
+  }
+  
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.rating {
+    color: #ffa500;
+    margin-bottom: 10px;
+}
+
+.reviews {
+    color: #666;
+}
+
+.additional-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-item i {
+    margin-right: 10px;
+    color: #4a4a4a;
+}
+
+.booking-form {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="date"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.subtotal {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.confirm-booking {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.additional-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-button {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.option-button i {
+    margin-right: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #search form {
+        flex-direction: column;
+    }
+
+    #search input,
+    #search select,
+    #search button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-card {
+        width: 100%;
+    }
+
+    .tour-card img {
+        height: 200px;
+    }
+
+    .inspiration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-logo {
+        width: 50px;
+        height: 50px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .tour-card img {
+        height: 150px;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
