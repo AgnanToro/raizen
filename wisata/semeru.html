@@ -58,14 +58,14 @@
                     </div>
                     <div class="form-group">
                         <label for="guestCount">Guests:</label>
-                        <select id="guestCount" required data-price="$1.00">
+                        <select id="guestCount" required>
                             <option value="1">1 Guest</option>
                             <option value="2">2 Guests</option>
                             <option value="3">3 Guests</option>
                             <option value="4">4 Guests</option>
                         </select>
                     </div>
-                    <div class="subtotal">
+                    <div class="form-group">
                         <p>Subtotal: <span id="subtotalAmount">$0.00</span></p>
                     </div>
                     <button type="submit" class="confirm-booking">Confirm Booking</button>
@@ -78,6 +78,9 @@
                         <i class="fas fa-share-alt"></i> Share This Trip
                     </button>
                 </div>
+                <div id="confirmationMessage" style="display:none; margin-top: 20px;">
+                    <p>Thank you for your booking! We look forward to seeing you.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -88,15 +91,17 @@
             const toDateInput = document.getElementById('toDate');
             const guestCountSelect = document.getElementById('guestCount');
             const subtotalElement = document.getElementById('subtotalAmount');
+            const bookingForm = document.getElementById('bookingForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
             
             function calculateSubtotal() {
                 const fromDate = new Date(fromDateInput.value);
                 const toDate = new Date(toDateInput.value);
                 const guestCount = parseInt(guestCountSelect.value);
-                const pricePerNightPerGuest = 50; // Sesuaikan dengan harga yang benar
+                const pricePerNightPerGuest = 15.63; // Adjust the price as needed
                 
-                if (fromDate && toDate && !isNaN(fromDate) && !isNaN(toDate)) {
-                    const nights = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+                if (fromDateInput.value && toDateInput.value && !isNaN(fromDate) && !isNaN(toDate)) {
+                    const nights = Math.max(Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24)), 1);
                     const subtotal = nights * guestCount * pricePerNightPerGuest;
                     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
                 } else {
@@ -119,9 +124,14 @@
             
             // Calculate subtotal on page load
             calculateSubtotal();
+
+            // Show confirmation message on form submit
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                confirmationMessage.style.display = 'block';
+            });
         });
-        </script>
-        
+    </script>
         
 </body>
 </html>
